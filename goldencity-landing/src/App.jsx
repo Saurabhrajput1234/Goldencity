@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FaWhatsapp, FaMapMarkerAlt, FaPhone, FaClock, FaSwimmingPool, FaDumbbell, FaFutbol, FaChild, FaCar, FaShieldAlt, FaTint, FaBolt, FaStar, FaFacebookF, FaInstagram, FaTwitter, FaHome, FaInfoCircle, FaImages, FaEnvelope, FaCheckCircle, FaBuilding, FaTimes, FaBars } from 'react-icons/fa';
 import { MdLocationCity } from 'react-icons/md';
 import { GiModernCity } from 'react-icons/gi';
@@ -16,6 +16,34 @@ function App() {
   const [showEnquiryPopup, setShowEnquiryPopup] = useState(false);
   const [showSiteMap, setShowSiteMap] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const videoRef = useRef(null);
+
+  // Auto-play video when it comes into view
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    if (!videoElement) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoElement.play().catch(err => console.log('Autoplay prevented:', err));
+          } else {
+            videoElement.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(videoElement);
+
+    return () => {
+      if (videoElement) {
+        observer.unobserve(videoElement);
+      }
+    };
+  }, []);
 
   // Show enquiry popup after 5 seconds
   useEffect(() => {
@@ -45,53 +73,33 @@ function App() {
     { icon: <FaBolt className="text-4xl text-yellow-500" />, name: 'Power Backup' }
   ];
 
-  // Gallery data with dummy images
+  // Gallery data with real images (URL encoded paths for spaces)
   const galleryItems = [
-    {
-      id: 1,
-      title: 'Township Entrance',
-      image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop'
-    },
-    {
-      id: 2,
-      title: 'Residential Plots',
-      image: 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=800&h=600&fit=crop'
-    },
-    {
-      id: 3,
-      title: 'Green Spaces',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop'
-    },
-    {
-      id: 4,
-      title: 'Modern Infrastructure',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop'
-    },
-    {
-      id: 5,
-      title: 'Community Park',
-      image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop'
-    },
-    {
-      id: 6,
-      title: 'Wide Roads',
-      image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop'
-    },
-    {
-      id: 7,
-      title: 'Amenities Center',
-      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop'
-    },
-    {
-      id: 8,
-      title: 'Plot Layout',
-      image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop'
-    },
-    {
-      id: 9,
-      title: 'Township View',
-      image: 'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800&h=600&fit=crop'
-    }
+    // Drone Shots
+    { id: 1, title: 'Aerial View - Township Layout', image: '/Drone%20Shot/DJI_0050.JPG', category: 'Drone View' },
+    { id: 2, title: 'Aerial View - Infrastructure', image: '/Drone%20Shot/DJI_0055.JPG', category: 'Drone View' },
+    { id: 3, title: 'Aerial View - Complete Township', image: '/Drone%20Shot/DJI_0098.JPG', category: 'Drone View' },
+    { id: 4, title: 'Drone Shot - Entrance Gate', image: '/Drone%20Shot/vlcsnap-2025-11-20-14h21m15s529.png', category: 'Drone View' },
+    { id: 5, title: 'Drone Shot - Roads & Plots', image: '/Drone%20Shot/vlcsnap-2025-11-20-14h21m40s189.png', category: 'Drone View' },
+    { id: 6, title: 'Drone Shot - Township Overview', image: '/Drone%20Shot/vlcsnap-2025-11-20-14h22m34s780.png', category: 'Drone View' },
+    
+    // Client Interactions
+    { id: 7, title: 'Client Site Visit', image: '/Client%20Interection/IMG_0713.JPG', category: 'Client Visit' },
+    { id: 8, title: 'Happy Clients', image: '/Client%20Interection/IMG_0728.JPG', category: 'Client Visit' },
+    { id: 9, title: 'Plot Inspection', image: '/Client%20Interection/IMG_0768.JPG', category: 'Client Visit' },
+    { id: 10, title: 'Client Meeting', image: '/Client%20Interection/IMG_0774.JPG', category: 'Client Visit' },
+    { id: 11, title: 'Site Tour', image: '/Client%20Interection/IMG_0787.JPG', category: 'Client Visit' },
+    { id: 12, title: 'Client Interaction', image: '/Client%20Interection/IMG_0810.JPG', category: 'Client Visit' },
+    { id: 13, title: 'Plot Booking', image: '/Client%20Interection/IMG_0826.JPG', category: 'Client Visit' },
+    { id: 14, title: 'Client Visit', image: '/Client%20Interection/IMG_0950.JPG', category: 'Client Visit' },
+    { id: 15, title: 'Site Inspection', image: '/Client%20Interection/IMG_0970.JPG', category: 'Client Visit' },
+    { id: 16, title: 'Client Discussion', image: '/Client%20Interection/IMG_1003.JPG', category: 'Client Visit' },
+    { id: 17, title: 'Happy Customers', image: '/Client%20Interection/IMG_1037.JPG', category: 'Client Visit' },
+    { id: 18, title: 'Plot Selection', image: '/Client%20Interection/IMG_1080.JPG', category: 'Client Visit' },
+    { id: 19, title: 'Client Testimonial', image: '/Client%20Interection/IMG_1119.JPG', category: 'Client Visit' },
+    { id: 20, title: 'Site Visit Group', image: '/Client%20Interection/IMG_1162.JPG', category: 'Client Visit' },
+    { id: 21, title: 'Client Interaction', image: '/Client%20Interection/vlcsnap-2025-11-20-14h03m17s531.png', category: 'Client Visit' },
+    { id: 22, title: 'Site Tour', image: '/Client%20Interection/vlcsnap-2025-11-20-14h04m17s953.png', category: 'Client Visit' }
   ];
 
   // Testimonials data
@@ -110,10 +118,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50" role="main">
       {/* Header/Navigation */}
-      <header className="bg-white shadow-md fixed w-full top-0 z-50">
-        <nav className="container mx-auto px-4 py-4">
+      <header className="bg-white shadow-md fixed w-full top-0 z-50" role="banner">
+        <nav className="container mx-auto px-4 py-4" role="navigation" aria-label="Main navigation">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center gap-3">
@@ -154,13 +162,21 @@ function App() {
               </a>
             </div>
 
-            {/* Desktop WhatsApp Button */}
-            <button 
-              onClick={handleWhatsAppClick}
-              className="hidden md:flex bg-green-500 hover:bg-green-600 text-white px-4 md:px-6 py-2 rounded-full transition items-center gap-2"
-            >
-              <FaWhatsapp className="text-xl" /> <span className="hidden lg:inline">WhatsApp</span>
-            </button>
+            {/* Desktop Contact Buttons */}
+            <div className="hidden md:flex items-center gap-3">
+              <a 
+                href={`tel:+91${whatsappNumber}`}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 md:px-6 py-2 rounded-full transition flex items-center gap-2"
+              >
+                <FaPhone className="text-lg" /> <span className="hidden lg:inline">9557153296</span>
+              </a>
+              <button 
+                onClick={handleWhatsAppClick}
+                className="bg-green-500 hover:bg-green-600 text-white px-4 md:px-6 py-2 rounded-full transition flex items-center gap-2"
+              >
+                <FaWhatsapp className="text-xl" /> <span className="hidden lg:inline">WhatsApp</span>
+              </button>
+            </div>
 
             {/* Mobile Menu Button */}
             <button 
@@ -236,13 +252,15 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative pt-20 min-h-screen flex items-center overflow-hidden">
+      <section id="home" className="relative pt-20 min-h-screen flex items-center overflow-hidden" aria-label="Hero section">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
             src="/Goldencity.jpg" 
-            alt="The GoldenCity Township"
+            alt="The GoldenCity Township entrance gate - Premium residential and commercial plots near Jewar Airport on Yamuna Expressway"
+            title="Golden City Township - ADA Approved Plots Near Jewar Airport"
             className="w-full h-full object-cover"
+            loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
         </div>
@@ -376,10 +394,10 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-20 bg-white" aria-labelledby="about-heading">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">About The GoldenCity Township</h2>
+            <h2 id="about-heading" className="text-4xl font-bold text-gray-800 mb-4">About The GoldenCity Township</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               A premium residential community designed for modern living with excellent connectivity and world-class infrastructure.
             </p>
@@ -408,6 +426,37 @@ function App() {
               <p className="text-gray-600">
                 Landscaped gardens, parks, and open spaces for a healthy and sustainable lifestyle.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3D Video View Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Experience The GoldenCity in 3D</h2>
+            <p className="text-xl text-gray-300">Take a virtual tour of our premium township</p>
+          </div>
+          
+          <div className="max-w-5xl mx-auto">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black">
+              <video 
+                ref={videoRef}
+                className="w-full h-auto"
+                controls
+                loop
+                muted
+                playsInline
+                poster="/Goldencity.jpg"
+                preload="metadata"
+              >
+                <source 
+                  src="https://res.cloudinary.com/dcnblai32/video/upload/v1763636211/ohwevnntwvs6lhedb63g.mp4" 
+                  type="video/mp4" 
+                />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
@@ -503,13 +552,16 @@ function App() {
                     <img 
                       src={item.image} 
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-125"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-125 bg-gray-300"
+                      onError={(e) => {
+                        console.error('Image failed to load:', item.image);
+                        e.target.src = '/Goldencity.jpg';
+                      }}
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition flex items-end">
-                      <div className="w-full p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform">
-                        <p className="text-lg font-semibold">{item.title}</p>
-                        <p className="text-sm">Click to view full size</p>
-                      </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform">
+                      <p className="text-lg font-semibold drop-shadow-lg">{item.title}</p>
+                      <p className="text-sm drop-shadow-lg">{item.category}</p>
                     </div>
                   </div>
                 </div>
@@ -876,8 +928,87 @@ function App() {
         </div>
       </section>
 
+      {/* FAQ Section for SEO */}
+      <section className="py-16 bg-white" itemScope itemType="https://schema.org/FAQPage">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+              Frequently Asked Questions - Golden City Township
+            </h2>
+            
+            <div className="space-y-6">
+              <article className="bg-gray-50 p-6 rounded-xl" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                <h3 className="text-xl font-bold text-gray-800 mb-3" itemProp="name">
+                  Where is Golden City Township located?
+                </h3>
+                <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                  <p className="text-gray-600" itemProp="text">
+                    Golden City Township is strategically located near Jewar Airport (Noida International Airport) on Yamuna Expressway in Gautam Buddha Nagar, Uttar Pradesh. It offers excellent connectivity to Delhi, Noida, Greater Noida, and Agra.
+                  </p>
+                </div>
+              </article>
+
+              <article className="bg-gray-50 p-6 rounded-xl" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                <h3 className="text-xl font-bold text-gray-800 mb-3" itemProp="name">
+                  What is the price of plots in Golden City Township?
+                </h3>
+                <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                  <p className="text-gray-600" itemProp="text">
+                    Golden City plots start from ₹34,000 per square yard for residential plots and go up to ₹38,500 per square yard for commercial plots. We offer flexible payment plans and bank loan facilities.
+                  </p>
+                </div>
+              </article>
+
+              <article className="bg-gray-50 p-6 rounded-xl" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                <h3 className="text-xl font-bold text-gray-800 mb-3" itemProp="name">
+                  Is Golden City Township ADA approved?
+                </h3>
+                <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                  <p className="text-gray-600" itemProp="text">
+                    Yes, Golden City Township is fully ADA (Agra Development Authority) approved with all necessary legal clearances. All plots come with clear titles and proper documentation ensuring a safe and secure investment.
+                  </p>
+                </div>
+              </article>
+
+              <article className="bg-gray-50 p-6 rounded-xl" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                <h3 className="text-xl font-bold text-gray-800 mb-3" itemProp="name">
+                  What amenities are available in Golden City Township?
+                </h3>
+                <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                  <p className="text-gray-600" itemProp="text">
+                    Golden City offers world-class amenities including 24/7 security, wide roads (30 & 40 feet), underground utilities, landscaped parks, swimming pool, gymnasium, sports complex, kids play area, and community halls.
+                  </p>
+                </div>
+              </article>
+
+              <article className="bg-gray-50 p-6 rounded-xl" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                <h3 className="text-xl font-bold text-gray-800 mb-3" itemProp="name">
+                  How far is Golden City from Jewar Airport?
+                </h3>
+                <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                  <p className="text-gray-600" itemProp="text">
+                    Golden City Township is located approximately 10-15 minutes from Noida International Jewar Airport, making it an ideal investment opportunity with high appreciation potential due to the airport's proximity.
+                  </p>
+                </div>
+              </article>
+
+              <article className="bg-gray-50 p-6 rounded-xl" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                <h3 className="text-xl font-bold text-gray-800 mb-3" itemProp="name">
+                  Can I get a bank loan for Golden City plots?
+                </h3>
+                <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                  <p className="text-gray-600" itemProp="text">
+                    Yes, bank loan facilities are available for Golden City plots. We have tie-ups with leading banks and financial institutions to help you with easy financing options for your plot purchase.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SEO Content Section */}
-      <section className="py-12 bg-white border-t border-gray-200">
+      <section className="py-12 bg-gray-50 border-t border-gray-200">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">
@@ -888,7 +1019,7 @@ function App() {
               <div>
                 <h3 className="font-bold text-gray-800 mb-3">Golden City Township - Your Gateway to Premium Living</h3>
                 <p className="mb-4">
-                  <strong>The Golden City Township</strong> is a premium residential and commercial real estate project strategically located near <strong>Jewar Airport</strong> (Noida International Airport) on the <strong>Yamuna Expressway</strong>. Offering <strong>ADA approved plots</strong> and <strong>RERA approved plots</strong> with clear titles, Golden City represents the perfect investment opportunity in one of India's fastest-growing real estate corridors.
+                  <strong>The Golden City Township</strong> is a premium residential and commercial real estate project strategically located near <strong>Jewar Airport</strong> (Noida International Airport) on the <strong>Yamuna Expressway</strong>. Offering <strong>ADA approved plots</strong> with clear titles, Golden City represents the perfect investment opportunity in one of India's fastest-growing real estate corridors.
                 </p>
                 <p className="mb-4">
                   Our <strong>Golden City Phase 1</strong> and <strong>Golden City Phase 2</strong> developments feature <strong>residential plots near Jewar Airport</strong> starting from just ₹34,000 per square yard, with <strong>commercial plots near Noida International Airport</strong> available for business investments. All plots come with <strong>bank loan available</strong> options and <strong>immediate possession</strong>.
@@ -1122,7 +1253,7 @@ function App() {
           </div>
         </div>
       )}
-    </div>
+    </main>
   );
 }
 

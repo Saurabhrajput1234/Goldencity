@@ -1,0 +1,27 @@
+{
+  "name": "The Golden City Township - Premium Plots Near Jewar Airport",
+  "short_name": "Golden City",
+  "description": "ADA approved residential and commercial plots near Jewar Airport on Yamuna Expressway",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d97706",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/Golden city Logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Golden city Logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["real estate", "property", "investment"],
+  "lang": "en-IN",
+  "dir": "ltr"
+}
