@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { FaWhatsapp, FaMapMarkerAlt, FaPhone, FaClock, FaSwimmingPool, FaDumbbell, FaFutbol, FaChild, FaCar, FaShieldAlt, FaTint, FaBolt, FaStar, FaFacebookF, FaInstagram, FaTwitter, FaHome, FaInfoCircle, FaImages, FaEnvelope, FaCheckCircle, FaBuilding, FaTimes, FaBars } from 'react-icons/fa';
+import { FaWhatsapp, FaMapMarkerAlt, FaPhone, FaClock, FaSwimmingPool, FaDumbbell, FaFutbol, FaChild, FaCar, FaShieldAlt, FaTint, FaBolt, FaStar, FaFacebookF, FaInstagram, FaTwitter,FaYoutube, FaHome, FaInfoCircle, FaImages, FaEnvelope, FaCheckCircle, FaBuilding, FaTimes, FaBars } from 'react-icons/fa';
 import { MdLocationCity } from 'react-icons/md';
 import { GiModernCity } from 'react-icons/gi';
 import { BiLeaf } from 'react-icons/bi';
@@ -54,7 +54,7 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  const whatsappNumber = '9557153296'; // WhatsApp contact number
+  const whatsappNumber = '7678379336'; // WhatsApp contact number
 
   const handleWhatsAppClick = () => {
     const message = `Hi, I'm interested in The GoldenCity Township plots. Please provide more information.`;
@@ -151,7 +151,7 @@ function App() {
                 <FaEnvelope /> Contact
               </a>
               <a 
-                href="/brochure.pdf" 
+                href="/Brochure/the%20golden%20city%20brochure.pdf" 
                 download="The-GoldenCity-Brochure.pdf"
                 className="text-gray-700 hover:text-amber-600 transition flex items-center gap-1"
               >
@@ -168,7 +168,7 @@ function App() {
                 href={`tel:+91${whatsappNumber}`}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-4 md:px-6 py-2 rounded-full transition flex items-center gap-2"
               >
-                <FaPhone className="text-lg" /> <span className="hidden lg:inline">9557153296</span>
+                <FaPhone className="text-lg" /> <span className="hidden lg:inline">7678379336</span>
               </a>
               <button 
                 onClick={handleWhatsAppClick}
@@ -227,7 +227,7 @@ function App() {
                   <FaEnvelope /> Contact
                 </a>
                 <a 
-                  href="/brochure.pdf" 
+                  href="/Brochure/the%20golden%20city%20brochure.pdf" 
                   download="The-GoldenCity-Brochure.pdf"
                   className="text-gray-700 hover:text-amber-600 transition flex items-center gap-2 py-2"
                 >
@@ -321,7 +321,7 @@ function App() {
                   Schedule Visit
                 </a>
                 <a 
-                  href="/brochure.pdf"
+                  href="/Brochure/the%20golden%20city%20brochure.pdf"
                   download="The-GoldenCity-Brochure.pdf"
                   className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition shadow-lg flex items-center gap-2"
                 >
@@ -368,7 +368,7 @@ function App() {
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-amber-500"
-                    placeholder="9557153296"
+                    placeholder="7678379336"
                   />
                 </div>
                 <div>
@@ -1108,7 +1108,7 @@ function App() {
                   <FaInstagram />
                 </a>
                 <a
-                  href="https://www.facebook.com"
+                  href="https://www.facebook.com/profile.php?id=61583923415993&sk=about_details"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-blue-600 hover:bg-blue-700 w-10 h-10 rounded-full transition flex items-center justify-center"
@@ -1123,6 +1123,16 @@ function App() {
                 >
                   <FaWhatsapp />
                 </a>
+
+                <a
+  href="https://www.youtube.com/@goldencityplots"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-red-600 hover:bg-red-700 w-10 h-10 rounded-full transition flex items-center justify-center"
+>
+  <FaYoutube />
+</a>
+                
               </div>
             </div>
           </div>
