@@ -534,38 +534,66 @@ function App() {
       </section>
 
       {/* Gallery Section with Auto Scroll */}
-      <section id="gallery" className="py-20 bg-gray-50 overflow-hidden">
+      <section id="gallery" className="py-20 bg-gray-50 overflow-x-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Gallery</h2>
             <p className="text-xl text-gray-600">Take a virtual tour of The GoldenCity Township</p>
           </div>
           
-          <div className="relative">
-            <div className="flex animate-scroll-right">
-              {[...galleryItems, ...galleryItems].map((item, index) => (
-                <div key={index} className="flex-shrink-0 w-80 mx-4">
+          <div className="relative group">
+            {/* Manual Scroll Buttons */}
+            <button
+              onClick={() => {
+                const container = document.querySelector('.gallery-scroll-container');
+                if (container) container.scrollLeft -= 400;
+              }}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all hover:scale-110"
+              aria-label="Scroll left"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => {
+                const container = document.querySelector('.gallery-scroll-container');
+                if (container) container.scrollLeft += 400;
+              }}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all hover:scale-110"
+              aria-label="Scroll right"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            
+            <div className="gallery-scroll-container overflow-x-auto overflow-y-visible scrollbar-hide scroll-smooth py-8">
+              <div className="flex animate-scroll-right">
+                {[...galleryItems, ...galleryItems].map((item, index) => (
+                <div key={index} className="shrink-0 w-80 mx-4">
                   <div 
                     onClick={() => setSelectedImage(item)}
-                    className="relative h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer hover:scale-150 hover:z-10"
+                    className="relative h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer hover:scale-125 hover:z-10"
                   >
                     <img 
                       src={item.image} 
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-125 bg-gray-300"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 bg-gray-300"
                       onError={(e) => {
                         console.error('Image failed to load:', item.image);
                         e.target.src = '/Goldencity.jpg';
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform">
-                      <p className="text-lg font-semibold drop-shadow-lg">{item.title}</p>
-                      <p className="text-sm drop-shadow-lg">{item.category}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/85 transition-all"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                      <p className="text-lg font-bold drop-shadow-lg">{item.title}</p>
+                      <p className="text-sm drop-shadow-lg opacity-90">{item.category}</p>
                     </div>
                   </div>
                 </div>
               ))}
+              </div>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ Disallow: /admin/
 Disallow: /private/
 
 # Sitemap
-Sitemap: https://goldencitytownship.com/sitemap.xml
+Sitemap: https://goldencityplots.in/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
