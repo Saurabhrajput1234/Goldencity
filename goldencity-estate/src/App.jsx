@@ -16,6 +16,36 @@ function App() {
 
   const whatsappNumber = '917678379336';
 
+  // Scroll Animation Effect
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      // Observe all elements with scroll-animate classes
+      const animateElements = document.querySelectorAll(
+        '.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale, .scroll-animate-fade'
+      );
+      animateElements.forEach(el => observer.observe(el));
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
+  }, []);
+
   // Gallery images data
   const galleryImages = [
     // Drone Shots
@@ -183,42 +213,63 @@ function App() {
             alt="The GoldenCity Township"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/90 to-gray-900/85"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-gray-900/50"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="text-white">
-              <h1 className="text-5xl lg:text-7xl font-bold elegant-heading mb-6 text-white">
-                THE GOLDENCITY TOWNSHIP
+            <div className="text-white animate-slideInLeft">
+              <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-4 border border-white/30">
+                <p className="text-sm font-bold tracking-wider" style={{ color: 'rgb(194, 139, 46)' }}>PREMIUM TOWNSHIP</p>
+              </div>
+              <h1 className="text-5xl lg:text-7xl font-bold elegant-heading mb-6 text-white animate-fadeIn drop-shadow-2xl">
+                THE GOLDENCITY
+                <span className="block" style={{ color: 'rgb(194, 139, 46)' }}>TOWNSHIP</span>
               </h1>
-              <div className="h-1 w-32 bg-white mb-8"></div>
-              <p className="text-xl lg:text-2xl mb-4 text-gray-200">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="h-1 w-20 rounded-full" style={{ background: 'linear-gradient(to right, rgb(194, 139, 46), transparent)' }}></div>
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: 'rgb(194, 139, 46)' }}></div>
+                <div className="h-1 w-20 rounded-full" style={{ background: 'linear-gradient(to left, rgb(194, 139, 46), transparent)' }}></div>
+              </div>
+              <p className="text-xl lg:text-2xl mb-4 text-gray-200 animate-slideInLeft font-semibold" style={{ animationDelay: '0.2s' }}>
                 Premium Residential & Commercial Plots
               </p>
-              <p className="text-lg mb-8 text-gray-300">
+              <p className="text-lg mb-8 text-gray-300 animate-slideInLeft" style={{ animationDelay: '0.3s' }}>
                 Near Jewar International Airport | Yamuna Expressway
               </p>
               
-              <div className="bg-white/10 backdrop-blur-sm border-l-4 border-white p-6 mb-8 inline-block">
-                <p className="text-gray-300 text-sm mb-2 elegant-heading tracking-wider">STARTING AT</p>
-                <div className="flex items-baseline gap-3">
-                  <span className="text-3xl font-bold text-white">- ₹38,500</span>
+              <div className="bg-gradient-to-r from-black/80 to-black/60 backdrop-blur-md border-l-4 p-6 mb-8 inline-block animate-scaleIn hover:scale-110 transition-all duration-300 rounded-lg shadow-2xl relative overflow-hidden group" style={{ borderColor: 'rgb(194, 139, 46)', animationDelay: '0.4s', boxShadow: '0 0 30px rgba(194, 139, 46, 0.3)' }}>
+                {/* Animated glow effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'radial-gradient(circle at center, rgba(194, 139, 46, 0.2) 0%, transparent 70%)' }}></div>
+                
+                {/* Shimmer effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
+                
+                <div className="relative z-10">
+                  <p className="text-sm mb-2 elegant-heading tracking-wider animate-pulse" style={{ color: 'rgb(194, 139, 46)' }}>STARTING AT</p>
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-5xl font-bold text-white drop-shadow-lg animate-pulse-slow">₹38,500</span>
+                  </div>
+                  <p className="text-lg text-gray-300 mt-1">per sq.yd</p>
                 </div>
-                <p className="text-xl text-gray-300 mt-1">/ sq.yd</p>
+                
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 opacity-20" style={{ background: 'radial-gradient(circle at top right, rgb(194, 139, 46), transparent)' }}></div>
               </div>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 animate-slideInUp" style={{ animationDelay: '0.5s' }}>
                 <button 
                   onClick={handleWhatsAppClick}
-                  className="bg-white hover:bg-gray-100 text-black px-8 py-4 rounded elegant-heading tracking-wider transition shadow-lg font-bold"
+                  className="px-8 py-4 rounded-lg elegant-heading tracking-wider transition-all duration-300 shadow-lg font-bold hover:scale-110 hover:shadow-2xl transform text-black"
+                  style={{ backgroundColor: 'rgb(194, 139, 46)' }}
                 >
                   BOOK YOUR PLOT
                 </button>
                 <a 
                   href="#contact"
-                  className="bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white px-8 py-4 rounded elegant-heading tracking-wider transition border-2 border-white"
+                  className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-lg elegant-heading tracking-wider transition-all duration-300 border-2 hover:scale-110 hover:shadow-2xl transform"
+                  style={{ borderColor: 'rgb(194, 139, 46)' }}
                 >
                   SCHEDULE VISIT
                 </a>
@@ -226,9 +277,9 @@ function App() {
             </div>
 
             {/* Right Side - Contact Form */}
-            <div className="bg-white/98 backdrop-blur-md p-8 shadow-2xl">
-              <h3 className="text-3xl font-bold text-black mb-2 elegant-heading">Have a Question?</h3>
-              <p className="text-gray-600 font-semibold mb-6 elegant-heading tracking-wider">ENQUIRE NOW</p>
+            <div className="bg-white/98 backdrop-blur-md p-8 rounded-2xl shadow-2xl animate-slideInRight hover:shadow-3xl transition-all duration-300 border-t-4" style={{ borderColor: 'rgb(194, 139, 46)' }}>
+              <h3 className="text-3xl font-bold text-black mb-2 elegant-heading animate-fadeIn">Have a Question?</h3>
+              <p className="font-semibold mb-6 elegant-heading tracking-wider animate-fadeIn" style={{ color: 'rgb(194, 139, 46)', animationDelay: '0.2s' }}>ENQUIRE NOW</p>
               
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -325,12 +376,19 @@ function App() {
       </section>
 
       {/* Plots Section */}
-      <section id="plots" className="py-20 bg-black">
+      <section id="plots" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 elegant-heading">AVAILABLE PLOTS</h2>
-            <div className="h-1 w-32 bg-white mx-auto mb-6"></div>
-            <p className="text-xl text-gray-300">Choose the perfect plot for your investment</p>
+            <div className="inline-block px-6 py-2 bg-golden-100 text-golden-800 rounded-full text-sm font-bold mb-4">
+              AVAILABLE PLOTS
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4 elegant-heading">CHOOSE YOUR PERFECT PLOT</h2>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-1 w-20 bg-gradient-to-r from-transparent to-golden-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-golden-500 rounded-full"></div>
+              <div className="h-1 w-20 bg-gradient-to-l from-transparent to-golden-500 rounded-full"></div>
+            </div>
+            <p className="text-xl text-gray-700">Premium residential and commercial plots with modern amenities</p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -373,6 +431,33 @@ function App() {
         </div>
       </section>
 
+      {/* Scrolling Text Marquee - Right to Left */}
+      <section className="py-6 bg-white overflow-hidden relative">
+        <div className="relative">
+          <div className="flex whitespace-nowrap marquee-scroll">
+            {[...Array(20)].map((_, i) => (
+              <div key={i} className="flex items-center mx-16 shrink-0">
+                <span className="font-black uppercase" style={{ 
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 900,
+                  letterSpacing: '0.02em',
+                  fontSize: 'clamp(4rem, 12vw, 10rem)',
+                  color: 'rgb(194 139 46)',
+                  opacity: 0.7
+                }}>
+                  GOLDENCITY TOWNSHIP
+                </span>
+                <span className="mx-10" style={{ 
+                  fontSize: 'clamp(4rem, 12vw, 10rem)',
+                  color: 'rgb(194 139 46)', 
+                  opacity: 0.6 
+                }}>✦</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Amenities Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -403,12 +488,19 @@ function App() {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-20 bg-maroon-900">
+      <section id="gallery" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-golden-400 mb-4 elegant-heading">GALLERY</h2>
-            <div className="h-1 w-32 bg-golden-600 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-300">Explore The GoldenCity Township</p>
+            <div className="inline-block px-6 py-2 bg-golden-100 text-golden-800 rounded-full text-sm font-bold mb-4">
+              GALLERY
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4 elegant-heading">EXPLORE OUR TOWNSHIP</h2>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-1 w-20 bg-gradient-to-r from-transparent to-golden-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-golden-500 rounded-full"></div>
+              <div className="h-1 w-20 bg-gradient-to-l from-transparent to-golden-500 rounded-full"></div>
+            </div>
+            <p className="text-xl text-gray-700">Take a visual tour of The GoldenCity Township</p>
           </div>
           
           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -416,7 +508,7 @@ function App() {
               <div 
                 key={item.id} 
                 onClick={() => setSelectedImage(item)}
-                className="relative h-64 overflow-hidden rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:scale-105"
+                className="relative h-64 overflow-hidden rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:scale-105 scroll-animate"
               >
                 <img 
                   src={item.image} 
@@ -427,10 +519,10 @@ function App() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     <p className="text-white font-bold text-sm elegant-heading">{item.title}</p>
-                    <p className="text-golden-400 text-xs">{item.category}</p>
+                    <p className="text-gray-300 text-xs">{item.category}</p>
                   </div>
                 </div>
-                <div className="absolute top-3 right-3 bg-golden-600 text-white px-3 py-1 rounded-full text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-3 right-3 bg-black text-white px-3 py-1 rounded-full text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">
                   VIEW
                 </div>
               </div>
@@ -441,7 +533,7 @@ function App() {
             <div className="text-center mt-12">
               <button 
                 onClick={() => setShowAllGallery(true)}
-                className="bg-white hover:bg-gray-100 text-maroon-900 px-10 py-4 rounded-lg elegant-heading tracking-wider transition shadow-lg hover:shadow-xl transform hover:scale-105 font-bold text-lg border-2 border-golden-500"
+                className="bg-black hover:bg-gray-800 text-white px-10 py-4 rounded-lg elegant-heading tracking-wider transition shadow-lg hover:shadow-xl transform hover:scale-105 font-bold text-lg"
               >
                 VIEW MORE IMAGES
               </button>
@@ -452,7 +544,7 @@ function App() {
             <div className="text-center mt-12">
               <button 
                 onClick={() => setShowAllGallery(false)}
-                className="bg-white hover:bg-gray-100 text-maroon-900 border-2 border-golden-500 px-10 py-4 rounded-lg elegant-heading tracking-wider transition shadow-lg hover:shadow-xl font-bold text-lg"
+                className="bg-black hover:bg-gray-800 text-white px-10 py-4 rounded-lg elegant-heading tracking-wider transition shadow-lg hover:shadow-xl font-bold text-lg"
               >
                 SHOW LESS
               </button>
@@ -520,9 +612,16 @@ function App() {
       <section id="contact" className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4 elegant-heading">CONTACT US</h2>
-            <div className="h-1 w-32 bg-black mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600">Get in touch with our team</p>
+            <div className="inline-block px-6 py-2 bg-golden-100 text-golden-800 rounded-full text-sm font-bold mb-4">
+              CONTACT US
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4 elegant-heading">GET IN TOUCH</h2>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-1 w-20 bg-gradient-to-r from-transparent to-golden-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-golden-500 rounded-full"></div>
+              <div className="h-1 w-20 bg-gradient-to-l from-transparent to-golden-500 rounded-full"></div>
+            </div>
+            <p className="text-xl text-gray-600">We're here to help you find your perfect plot</p>
           </div>
           
           <div className="max-w-6xl mx-auto">
@@ -602,67 +701,73 @@ function App() {
               </div>
 
               {/* Right Side - Contact Form */}
-              <div className="lg:col-span-3 bg-white p-8 md:p-10 rounded-xl shadow-xl border-2 border-gray-100">
-                <div className="mb-8">
-                  <h4 className="text-3xl md:text-4xl font-bold text-maroon-900 mb-3 elegant-heading">SIGN UP FOR UPDATES</h4>
-                  <p className="text-gray-600 text-base">Get exclusive offers and latest updates about premium plots</p>
+              <div className="lg:col-span-3 bg-gradient-to-br from-white to-gray-50 p-8 md:p-10 rounded-2xl shadow-2xl border-t-4 border-golden-500 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-golden-100 rounded-full blur-3xl opacity-20 -mr-32 -mt-32"></div>
+                <div className="relative z-10">
+                  <div className="mb-8">
+                    <div className="inline-block px-4 py-1 bg-golden-100 text-golden-800 rounded-full text-xs font-bold mb-3">
+                      GET IN TOUCH
+                    </div>
+                    <h4 className="text-3xl md:text-4xl font-bold text-black mb-3 elegant-heading">SIGN UP FOR UPDATES</h4>
+                    <p className="text-gray-600 text-base">Get exclusive offers and latest updates about premium plots</p>
+                  </div>
+                  
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid md:grid-cols-2 gap-5">
+                      <div>
+                        <label className="block text-black text-xs font-bold mb-2 elegant-heading tracking-wide">FIRST AND LAST NAME (*)</label>
+                        <input 
+                          type="text"
+                          required
+                          value={formData.name}
+                          onChange={(e) => setFormData({...formData, name: e.target.value})}
+                          className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-golden-500 focus:ring-2 focus:ring-golden-200 transition-all shadow-sm"
+                          placeholder="Your Name"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-black text-xs font-bold mb-2 elegant-heading tracking-wide">PHONE NUMBER (*)</label>
+                        <input 
+                          type="tel"
+                          required
+                          value={formData.phone}
+                          onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                          className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-golden-500 focus:ring-2 focus:ring-golden-200 transition-all shadow-sm"
+                          placeholder="7678379336"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-black text-xs font-bold mb-2 elegant-heading tracking-wide">EMAIL (OPTIONAL)</label>
+                      <input 
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-golden-500 focus:ring-2 focus:ring-golden-200 transition-all shadow-sm"
+                        placeholder="your@email.com (optional)"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-black text-xs font-bold mb-2 elegant-heading tracking-wide">CONTENT</label>
+                      <textarea 
+                        rows="4"
+                        value={formData.message}
+                        onChange={(e) => setFormData({...formData, message: e.target.value})}
+                        className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-golden-500 focus:ring-2 focus:ring-golden-200 transition-all resize-none shadow-sm"
+                        placeholder="Your message..."
+                      ></textarea>
+                    </div>
+                    
+                    <button 
+                      type="submit"
+                      className="w-full bg-black hover:bg-gray-900 text-white py-4 rounded-lg font-bold elegant-heading tracking-wider transition-all flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-[1.02] text-base border-2 border-golden-500"
+                    >
+                      <FaWhatsapp className="text-xl" /> SEND INFORMATION
+                    </button>
+                  </form>
                 </div>
-                
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-maroon-900 text-sm font-bold mb-2 elegant-heading tracking-wide">FIRST AND LAST NAME (*)</label>
-                      <input 
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        className="w-full px-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-golden-500 focus:bg-white transition"
-                        placeholder="Your Name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-maroon-900 text-sm font-bold mb-2 elegant-heading tracking-wide">PHONE NUMBER (*)</label>
-                      <input 
-                        type="tel"
-                        required
-                        value={formData.phone}
-                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        className="w-full px-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-golden-500 focus:bg-white transition"
-                        placeholder="7678379336"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-maroon-900 text-sm font-bold mb-2 elegant-heading tracking-wide">EMAIL (OPTIONAL)</label>
-                    <input 
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="w-full px-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-golden-500 focus:bg-white transition"
-                      placeholder="your@email.com (optional)"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-maroon-900 text-sm font-bold mb-2 elegant-heading tracking-wide">CONTENT</label>
-                    <textarea 
-                      rows="4"
-                      value={formData.message}
-                      onChange={(e) => setFormData({...formData, message: e.target.value})}
-                      className="w-full px-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-golden-500 focus:bg-white transition resize-none"
-                      placeholder="Your message..."
-                    ></textarea>
-                  </div>
-                  
-                  <button 
-                    type="submit"
-                    className="w-full bg-maroon-900 hover:bg-maroon-800 text-golden-400 py-5 rounded-lg font-bold elegant-heading tracking-wider transition flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl transform hover:scale-[1.02] text-lg"
-                  >
-                    <FaWhatsapp className="text-2xl" /> SEND INFORMATION
-                  </button>
-                </form>
               </div>
             </div>
           </div>
@@ -713,9 +818,9 @@ function App() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition border-t-4 border-black">
+              <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border-t-4 border-black hover:-translate-y-2 group scroll-animate-left">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-float">
                     <span className="text-2xl">🏘️</span>
                   </div>
                   <h3 className="text-2xl font-bold text-black elegant-heading">Your Gateway to Premium Living</h3>
@@ -730,9 +835,9 @@ function App() {
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition border-t-4 border-black">
+              <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border-t-4 border-black hover:-translate-y-2 group scroll-animate-right">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-float">
                     <span className="text-2xl">💎</span>
                   </div>
                   <h3 className="text-2xl font-bold text-black elegant-heading">Why Invest in Goldencity?</h3>
@@ -751,32 +856,33 @@ function App() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-black via-gray-900 to-black text-white p-10 rounded-3xl shadow-2xl mb-12">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl md:text-4xl font-bold mb-4 elegant-heading">Book Your Goldencity Plot Today</h3>
-                <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-                  Experience the best of <strong>The Goldencity Township</strong> living. These premium <strong>Plots in Noida</strong> on <strong>Yamuna Express property</strong> corridor offer excellent <strong>Jewerproperty</strong> investment opportunities at <strong>Goldencity Aligarh</strong>.
+            <div className="bg-gradient-to-r from-black via-gray-900 to-black text-white p-10 rounded-3xl shadow-2xl mb-12 hover:scale-105 transition-transform duration-300 relative overflow-hidden group scroll-animate-scale border-2 border-golden-500">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-golden-500/10 to-transparent animate-shimmer"></div>
+              <div className="text-center mb-8 relative z-10">
+                <h3 className="text-3xl md:text-4xl font-bold mb-4 elegant-heading text-white drop-shadow-lg">Book Your Goldencity Plot Today</h3>
+                <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
+                  Experience the best of <strong className="text-golden-300">The Goldencity Township</strong> living. These premium <strong className="text-golden-300">Plots in Noida</strong> on <strong className="text-golden-300">Yamuna Express property</strong> corridor offer excellent <strong className="text-golden-300">Jewerproperty</strong> investment opportunities at <strong className="text-golden-300">Goldencity Aligarh</strong>.
                 </p>
               </div>
-              <div className="flex flex-wrap justify-center gap-4">
-                <button onClick={handleWhatsAppClick} className="bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-lg transform hover:scale-105 flex items-center gap-2">
+              <div className="flex flex-wrap justify-center gap-4 relative z-10">
+                <button onClick={handleWhatsAppClick} className="bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-golden-400 hover:text-white transition-all duration-300 shadow-lg transform hover:scale-110 flex items-center gap-2">
                   <FaWhatsapp className="text-xl" /> Contact Us
                 </button>
-                <a href="/Brochure/the%20golden%20city%20brochure.pdf" download className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-full font-bold transition shadow-lg transform hover:scale-105">
+                <a href="/Brochure/the%20golden%20city%20brochure.pdf" download className="bg-black hover:bg-golden-600 text-white px-8 py-4 rounded-full font-bold transition-all duration-300 shadow-lg transform hover:scale-110 border-2 border-white">
                   Download Brochure
                 </a>
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200">
+            <div className="bg-white p-6 rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200 hover:shadow-2xl transition-shadow duration-300 scroll-animate-fade">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center shrink-0 animate-pulse-slow">
                   <span className="text-xl">🔍</span>
                 </div>
                 <h4 className="text-xl font-bold text-black elegant-heading">Related Searches</h4>
               </div>
               <div className="relative overflow-hidden">
-                <div className="flex animate-scroll-left">
+                <div className="flex animate-scroll-left hover:pause">
                   {[
                     'The Goldencity', 'Goldencity', 'Goldencity Township', 'Goldencity Aligarh', 'Jewerproperty',
                     'Plots in Noida', 'Yamuna Express property', 'Goldencity Plots', 'ADA property',
@@ -868,21 +974,21 @@ function App() {
       </footer>
 
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+      <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50 animate-slideInRight">
         <button 
           onClick={handleWhatsAppClick}
-          className="bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition hover:scale-110 animate-blink-pulse"
+          className="bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-125 animate-bounce-slow hover:rotate-12"
           title="Chat on WhatsApp"
         >
-          <FaWhatsapp className="text-3xl" />
+          <FaWhatsapp className="text-3xl animate-pulse" />
         </button>
         <a 
           href="/Brochure/the%20golden%20city%20brochure.pdf"
           download="GoldenCity-Township-Brochure.pdf"
-          className="bg-black hover:bg-gray-800 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition hover:scale-110 animate-blink-pulse"
+          className="bg-black hover:bg-gray-800 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-125 animate-float hover:rotate-12"
           title="Download Brochure"
         >
-          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-8 h-8 animate-pulse-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
         </a>
