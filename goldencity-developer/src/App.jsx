@@ -344,14 +344,14 @@ function App() {
                 PREMIUM REAL ESTATE INVESTMENT
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-maroon-800 elegant-heading mb-4">
-                About The Golden City Township
+                About The Goldencity Township | Goldencity Aligarh
               </h2>
               <div className="flex items-center justify-center gap-4 mb-4">
                 <div className="h-1 w-20 bg-maroon-600 rounded-full"></div>
                 <div className="text-maroon-600 text-2xl">✦</div>
                 <div className="h-1 w-20 bg-maroon-600 rounded-full"></div>
               </div>
-              <p className="text-xl text-gray-600">Premium Real Estate Investment Near Jewar Airport</p>
+              <p className="text-xl text-gray-600">The Goldencity (Thegoldencity) - Premium Plots in Noida | Yamuna Express Property | Jewerproperty Investment</p>
             </div>
 
             {/* Content Cards */}
@@ -365,11 +365,11 @@ function App() {
                   <h3 className="text-2xl font-bold text-maroon-800 elegant-heading">Your Gateway to Premium Living</h3>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  <strong className="text-maroon-800">The Golden City Township</strong> is a premium residential and commercial real estate project strategically located near <strong className="text-maroon-700">Jewar Airport</strong> (Noida International Airport) on the <strong className="text-maroon-700">Yamuna Expressway</strong>. Offering the perfect investment opportunity in one of India's fastest-growing real estate corridors.
+                  <strong className="text-maroon-800">The Goldencity Township</strong> (also known as <strong className="text-maroon-800">Thegoldencity</strong>, <strong className="text-maroon-800">The Golden city</strong>, and <strong className="text-maroon-800">Golden City</strong>) is a premium residential and commercial real estate project strategically located in <strong className="text-maroon-700">Goldencity Aligarh</strong> near <strong className="text-maroon-700">Jewar Airport</strong> (Noida International Airport) on the <strong className="text-maroon-700">Yamuna Express</strong>. Offering the perfect <strong className="text-maroon-700">Jewerproperty</strong> investment opportunity in one of India's fastest-growing real estate corridors with best <strong className="text-maroon-700">Plots in Noida</strong>.
                 </p>
                 <div className="bg-maroon-50 p-4 rounded-xl">
                   <p className="text-gray-700 leading-relaxed">
-                    Our <strong className="text-maroon-800">Golden City Phase 1</strong> and <strong className="text-maroon-800">Golden City Phase 2</strong> developments feature <strong className="text-maroon-700">residential plots near Jewar Airport</strong> starting from just <span className="text-2xl font-bold text-maroon-800">₹38,500</span> per square yard, with <strong className="text-maroon-700">commercial plots near Noida International Airport</strong> available for business investments.
+                    Our <strong className="text-maroon-800">Goldencity Phase 1</strong> and <strong className="text-maroon-800">Goldencity Phase 2</strong> developments feature premium <strong className="text-maroon-700">Goldencity Plots</strong> and <strong className="text-maroon-700">residential plots near Jewar Airport</strong> starting from just <span className="text-2xl font-bold text-maroon-800">₹38,500</span> per square yard. <strong className="text-maroon-700">The Goldencity Township</strong> offers <strong className="text-maroon-700">ADA property</strong> with clear titles, making it the best <strong className="text-maroon-700">Yamuna Express property</strong> investment for <strong className="text-maroon-700">commercial plots near Noida International Airport</strong> and residential purposes.
                   </p>
                 </div>
               </div>
@@ -383,7 +383,7 @@ function App() {
                   <h3 className="text-2xl font-bold text-maroon-800 elegant-heading">Why Invest in Golden City?</h3>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  <strong className="text-maroon-800">Golden City Jewar</strong> offers unmatched connectivity via <strong className="text-maroon-700">Yamuna Expressway authority plots</strong>, proximity to <strong className="text-maroon-700">Film City</strong>, and strategic location in the <strong className="text-maroon-700">YEIDA</strong> region. Our <strong className="text-maroon-700">gated township plots</strong> feature world-class amenities.
+                  <strong className="text-maroon-800">Goldencity Jewar</strong> (also known as <strong className="text-maroon-800">The Goldencity Aligarh</strong>) offers unmatched connectivity via <strong className="text-maroon-700">Yamuna Express property</strong> corridor, proximity to <strong className="text-maroon-700">Film City</strong>, and strategic location in the <strong className="text-maroon-700">YEIDA</strong> region. Our <strong className="text-maroon-700">gated township plots</strong> at <strong className="text-maroon-700">The Goldencity Township</strong> feature world-class amenities. These <strong className="text-maroon-700">ADA property</strong> plots are perfect for <strong className="text-maroon-700">Jewerproperty</strong> investors looking for premium <strong className="text-maroon-700">Plots in Noida</strong> with high appreciation potential.
                 </p>
                 <div className="space-y-2">
                   {['24/7 Security', 'Wide Roads', 'Bank Loan Available', 'Immediate Possession', 'Vastu Compliant', 'Clear Title'].map((feature, i) => (
@@ -437,6 +437,9 @@ function App() {
               <div className="relative overflow-hidden">
                 <div className="flex animate-scroll-left">
                   {[
+                    'The Goldencity', 'Goldencity', 'Goldencity Township', 'Goldencity Aligarh', 'Jewerproperty',
+                    'Plots in Noida', 'Yamuna Express property', 'Goldencity Plots', 'ADA property',
+                    'The Goldencity Township', 'Golden City', 'The Golden city', 'Thegoldencity', 'The Goldencity Aligarh',
                     'Golden City Yamuna Expressway', 'Golden City Noida', 'Golden City commercial plots', 
                     'Golden City residential plots', 'Jewar Airport investment', 'affordable plots near Jewar',
                     'luxury township Noida', 'high return investment plots', 'Golden City real estate',
@@ -446,10 +449,9 @@ function App() {
                     'Golden City brochure', 'Golden City site visit', 'Golden City booking',
                     'Golden City price', 'upcoming township near Noida Airport', '25 lakh starting plots'
                   ].concat([
-                    'Golden City Yamuna Expressway', 'Golden City Noida', 'Golden City commercial plots', 
-                    'Golden City residential plots', 'Jewar Airport investment', 'affordable plots near Jewar',
-                    'luxury township Noida', 'high return investment plots', 'Golden City real estate',
-                    'Vastu compliant plots', 'clear title plots', 'safe investment near Jewar Airport'
+                    'The Goldencity', 'Goldencity', 'Goldencity Township', 'Goldencity Aligarh', 'Jewerproperty',
+                    'Plots in Noida', 'Yamuna Express property', 'Goldencity Plots', 'ADA property',
+                    'The Goldencity Township', 'Golden City', 'The Golden city', 'Thegoldencity'
                   ]).map((tag, i) => (
                     <span key={i} className="px-4 py-2 bg-maroon-50 text-maroon-800 rounded-full text-sm font-semibold whitespace-nowrap mx-2 shrink-0">
                       {tag}

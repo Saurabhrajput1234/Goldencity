@@ -1091,6 +1091,113 @@ function App() {
         </div>
       </section>
 
+      {/* SEO Content Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, #d97706 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-block px-6 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-bold mb-6">
+                PREMIUM REAL ESTATE INVESTMENT
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 elegant-heading mb-4">
+                About The Goldencity Township | Goldencity Aligarh
+              </h2>
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <div className="h-1 w-20 bg-amber-600 rounded-full"></div>
+                <div className="text-amber-600 text-2xl">✦</div>
+                <div className="h-1 w-20 bg-amber-600 rounded-full"></div>
+              </div>
+              <p className="text-xl text-gray-600">The Goldencity (Thegoldencity) - Premium Plots in Noida | Yamuna Express Property | Jewerproperty Investment</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition border-t-4 border-amber-600">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">🏘️</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 elegant-heading">Your Gateway to Premium Living</h3>
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  <strong className="text-amber-800">The Goldencity Township</strong> (also known as <strong className="text-amber-800">Thegoldencity</strong>, <strong className="text-amber-800">The Golden city</strong>, and <strong className="text-amber-800">Golden City</strong>) is a premium residential and commercial real estate project in <strong className="text-amber-700">Goldencity Aligarh</strong> near <strong className="text-amber-700">Jewar Airport</strong> on the <strong className="text-amber-700">Yamuna Express</strong>. Perfect <strong className="text-amber-700">Jewerproperty</strong> investment with best <strong className="text-amber-700">Plots in Noida</strong>.
+                </p>
+                <div className="bg-amber-50 p-4 rounded-xl">
+                  <p className="text-gray-700 leading-relaxed">
+                    Our <strong className="text-amber-800">Goldencity Phase 1</strong> and <strong className="text-amber-800">Goldencity Phase 2</strong> at <strong className="text-amber-800">The Goldencity Township</strong> feature premium <strong className="text-amber-700">Goldencity Plots</strong> starting from <span className="text-2xl font-bold text-amber-800">₹38,500</span> per square yard. These <strong className="text-amber-700">ADA property</strong> plots on <strong className="text-amber-700">Yamuna Express property</strong> corridor offer the best investment opportunity.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition border-t-4 border-amber-600">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">💎</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 elegant-heading">Why Invest in Goldencity?</h3>
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  <strong className="text-amber-800">Goldencity Jewar</strong> (also known as <strong className="text-amber-800">The Goldencity Aligarh</strong>) offers unmatched connectivity via <strong className="text-amber-700">Yamuna Express property</strong> corridor, proximity to Film City, and strategic location in YEIDA region. Our <strong className="text-amber-700">gated township plots</strong> at <strong className="text-amber-700">The Goldencity Township</strong> are perfect for <strong className="text-amber-700">Jewerproperty</strong> investors seeking the best <strong className="text-amber-700">Plots in Noida</strong>.
+                </p>
+                <div className="space-y-2">
+                  {['24/7 Security', 'Wide Roads', 'Bank Loan Available', 'Immediate Possession', 'Vastu Compliant', 'Clear Title'].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-2 text-gray-700">
+                      <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                      <span className="font-semibold">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-amber-600 via-amber-700 to-amber-600 text-white p-10 rounded-3xl shadow-2xl mb-12">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl md:text-4xl font-bold mb-4 elegant-heading">Book Your Goldencity Plot Today</h3>
+                <p className="text-xl text-gray-100 max-w-3xl mx-auto">
+                  Experience the best of <strong>The Goldencity Township</strong> living. These premium <strong>Plots in Noida</strong> on <strong>Yamuna Express property</strong> corridor offer excellent <strong>Jewerproperty</strong> investment opportunities at <strong>Goldencity Aligarh</strong>.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center gap-4">
+                <button onClick={handleWhatsAppClick} className="bg-white text-amber-800 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-lg transform hover:scale-105 flex items-center gap-2">
+                  <FaWhatsapp className="text-xl" /> Contact Us
+                </button>
+                <a href="/Brochure/the%20golden%20city%20brochure.pdf" download className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-full font-bold transition shadow-lg transform hover:scale-105">
+                  Download Brochure
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-3xl shadow-xl overflow-hidden">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
+                  <span className="text-xl">🔍</span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 elegant-heading">Related Searches</h4>
+              </div>
+              <div className="relative overflow-hidden">
+                <div className="flex animate-scroll-left">
+                  {[
+                    'The Goldencity', 'Goldencity', 'Goldencity Township', 'Goldencity Aligarh', 'Jewerproperty',
+                    'Plots in Noida', 'Yamuna Express property', 'Goldencity Plots', 'ADA property',
+                    'The Goldencity Township', 'Golden City', 'The Golden city', 'Thegoldencity', 'The Goldencity Aligarh'
+                  ].concat([
+                    'The Goldencity', 'Goldencity', 'Goldencity Township', 'Goldencity Aligarh', 'Jewerproperty',
+                    'Plots in Noida', 'Yamuna Express property', 'Goldencity Plots', 'ADA property'
+                  ]).map((tag, i) => (
+                    <span key={i} className="px-4 py-2 bg-amber-50 text-amber-800 rounded-full text-sm font-semibold whitespace-nowrap mx-2 shrink-0">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12">
         <div className="container mx-auto px-4">

@@ -69,7 +69,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className={`fixed w-full top-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white shadow-2xl py-3 border-b-2 border-gray-200' : 'bg-maroon-900 shadow-lg py-4 border-b-2 border-golden-500/30'}`}>
+      <header className={`fixed w-full top-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white shadow-2xl py-3 border-b-2 border-gray-200' : 'bg-black shadow-lg py-4 border-b-2 border-gray-700'}`}>
         <nav className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -79,22 +79,22 @@ function App() {
                 alt="The GoldenCity Logo" 
                 className="h-16 w-auto"
               />
-              <div className={`elegant-heading transition-colors duration-500 ${scrolled ? 'text-maroon-900' : 'text-golden-400'}`}>
+              <div className={`elegant-heading transition-colors duration-500 ${scrolled ? 'text-black' : 'text-white'}`}>
                 <div className="text-2xl md:text-3xl font-bold tracking-wider drop-shadow-lg">THE GOLDENCITY</div>
-                <div className={`text-xs tracking-widest ${scrolled ? 'text-maroon-700' : 'text-golden-300'}`}>TOWNSHIP</div>
+                <div className={`text-xs tracking-widest ${scrolled ? 'text-gray-600' : 'text-gray-300'}`}>TOWNSHIP</div>
               </div>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-8">
-              <a href="#home" className={`transition-colors duration-500 elegant-heading font-semibold text-sm tracking-wide ${scrolled ? 'text-gray-800 hover:text-maroon-900' : 'text-white hover:text-golden-400'}`}>HOME</a>
-              <a href="#about" className={`transition-colors duration-500 elegant-heading font-semibold text-sm tracking-wide ${scrolled ? 'text-gray-800 hover:text-maroon-900' : 'text-white hover:text-golden-400'}`}>ABOUT US</a>
-              <a href="#plots" className={`transition-colors duration-500 elegant-heading font-semibold text-sm tracking-wide ${scrolled ? 'text-gray-800 hover:text-maroon-900' : 'text-white hover:text-golden-400'}`}>BUSINESS</a>
-              <a href="#contact" className={`transition-colors duration-500 elegant-heading font-semibold text-sm tracking-wide ${scrolled ? 'text-gray-800 hover:text-maroon-900' : 'text-white hover:text-golden-400'}`}>CONTACT</a>
+              <a href="#home" className={`transition-colors duration-500 elegant-heading font-semibold text-sm tracking-wide ${scrolled ? 'text-gray-800 hover:text-black' : 'text-white hover:text-gray-300'}`}>HOME</a>
+              <a href="#about" className={`transition-colors duration-500 elegant-heading font-semibold text-sm tracking-wide ${scrolled ? 'text-gray-800 hover:text-black' : 'text-white hover:text-gray-300'}`}>ABOUT US</a>
+              <a href="#plots" className={`transition-colors duration-500 elegant-heading font-semibold text-sm tracking-wide ${scrolled ? 'text-gray-800 hover:text-black' : 'text-white hover:text-gray-300'}`}>BUSINESS</a>
+              <a href="#contact" className={`transition-colors duration-500 elegant-heading font-semibold text-sm tracking-wide ${scrolled ? 'text-gray-800 hover:text-black' : 'text-white hover:text-gray-300'}`}>CONTACT</a>
               <a 
                 href="/Brochure/the%20golden%20city%20brochure.pdf" 
                 download="GoldenCity-Township-Brochure.pdf"
-                className={`transition-colors duration-500 elegant-heading font-semibold text-sm tracking-wide flex items-center gap-1 ${scrolled ? 'text-gray-800 hover:text-maroon-900' : 'text-white hover:text-golden-400'}`}
+                className={`transition-colors duration-500 elegant-heading font-semibold text-sm tracking-wide flex items-center gap-1 ${scrolled ? 'text-gray-800 hover:text-black' : 'text-white hover:text-gray-300'}`}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -109,13 +109,13 @@ function App() {
                 href={`tel:+91${whatsappNumber.slice(2)}`} 
                 className={`flex items-center gap-3 transition-all duration-500 px-5 py-3 rounded-lg border ${
                   scrolled 
-                    ? 'text-maroon-900 hover:text-maroon-700 bg-gray-100 hover:bg-gray-200 border-gray-300' 
-                    : 'text-white hover:text-golden-400 bg-white/20 hover:bg-white/30 border-golden-500/30'
+                    ? 'text-black hover:text-gray-700 bg-gray-100 hover:bg-gray-200 border-gray-300' 
+                    : 'text-white hover:text-gray-300 bg-white/20 hover:bg-white/30 border-gray-500'
                 }`}
               >
-                <FaPhone className={`text-xl transition-colors duration-500 ${scrolled ? 'text-maroon-900' : 'text-golden-400'}`} />
+                <FaPhone className={`text-xl transition-colors duration-500 ${scrolled ? 'text-black' : 'text-white'}`} />
                 <div className="text-left">
-                  <div className={`text-xs font-semibold transition-colors duration-500 ${scrolled ? 'text-maroon-700' : 'text-golden-300'}`}>CALL US</div>
+                  <div className={`text-xs font-semibold transition-colors duration-500 ${scrolled ? 'text-gray-600' : 'text-gray-300'}`}>CALL US</div>
                   <div className="text-base font-bold">7678379336</div>
                 </div>
               </a>
@@ -123,8 +123,8 @@ function App() {
                 onClick={handleWhatsAppClick} 
                 className={`px-8 py-3 rounded-lg elegant-heading tracking-wider transition-all duration-500 shadow-lg hover:shadow-xl transform hover:scale-105 font-bold text-base flex items-center gap-2 ${
                   scrolled 
-                    ? 'bg-maroon-900 hover:bg-maroon-800 text-golden-400' 
-                    : 'bg-golden-500 hover:bg-golden-600 text-white'
+                    ? 'bg-black hover:bg-gray-800 text-white' 
+                    : 'bg-white hover:bg-gray-100 text-black'
                 }`}
               >
                 <FaWhatsapp className="text-xl" /> ENQUIRE NOW
@@ -134,7 +134,7 @@ function App() {
             {/* Mobile Menu Button */}
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`lg:hidden transition-colors duration-500 ${scrolled ? 'text-maroon-900' : 'text-golden-400'}`}
+              className={`lg:hidden transition-colors duration-500 ${scrolled ? 'text-black' : 'text-white'}`}
             >
               {mobileMenuOpen ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" />}
             </button>
@@ -142,17 +142,17 @@ function App() {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className={`lg:hidden mt-4 pb-4 pt-4 transition-colors duration-500 ${scrolled ? 'border-t border-gray-300' : 'border-t border-golden-600/20'}`}>
+            <div className={`lg:hidden mt-4 pb-4 pt-4 transition-colors duration-500 ${scrolled ? 'border-t border-gray-300' : 'border-t border-gray-600'}`}>
               <div className="flex flex-col space-y-4">
-                <a href="#home" onClick={() => setMobileMenuOpen(false)} className={`transition-colors elegant-heading font-semibold ${scrolled ? 'text-gray-800 hover:text-maroon-900' : 'text-golden-300 hover:text-golden-400'}`}>HOME</a>
-                <a href="#about" onClick={() => setMobileMenuOpen(false)} className={`transition-colors elegant-heading font-semibold ${scrolled ? 'text-gray-800 hover:text-maroon-900' : 'text-golden-300 hover:text-golden-400'}`}>ABOUT US</a>
-                <a href="#plots" onClick={() => setMobileMenuOpen(false)} className={`transition-colors elegant-heading font-semibold ${scrolled ? 'text-gray-800 hover:text-maroon-900' : 'text-golden-300 hover:text-golden-400'}`}>BUSINESS</a>
-                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className={`transition-colors elegant-heading font-semibold ${scrolled ? 'text-gray-800 hover:text-maroon-900' : 'text-golden-300 hover:text-golden-400'}`}>CONTACT</a>
+                <a href="#home" onClick={() => setMobileMenuOpen(false)} className={`transition-colors elegant-heading font-semibold ${scrolled ? 'text-gray-800 hover:text-black' : 'text-gray-300 hover:text-white'}`}>HOME</a>
+                <a href="#about" onClick={() => setMobileMenuOpen(false)} className={`transition-colors elegant-heading font-semibold ${scrolled ? 'text-gray-800 hover:text-black' : 'text-gray-300 hover:text-white'}`}>ABOUT US</a>
+                <a href="#plots" onClick={() => setMobileMenuOpen(false)} className={`transition-colors elegant-heading font-semibold ${scrolled ? 'text-gray-800 hover:text-black' : 'text-gray-300 hover:text-white'}`}>BUSINESS</a>
+                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className={`transition-colors elegant-heading font-semibold ${scrolled ? 'text-gray-800 hover:text-black' : 'text-gray-300 hover:text-white'}`}>CONTACT</a>
                 <a 
                   href="/Brochure/the%20golden%20city%20brochure.pdf" 
                   download="GoldenCity-Township-Brochure.pdf"
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`transition-colors elegant-heading font-semibold flex items-center gap-2 ${scrolled ? 'text-gray-800 hover:text-maroon-900' : 'text-golden-300 hover:text-golden-400'}`}
+                  className={`transition-colors elegant-heading font-semibold flex items-center gap-2 ${scrolled ? 'text-gray-800 hover:text-black' : 'text-gray-300 hover:text-white'}`}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -163,8 +163,8 @@ function App() {
                   onClick={() => { handleWhatsAppClick(); setMobileMenuOpen(false); }} 
                   className={`px-6 py-4 rounded-lg elegant-heading tracking-wider transition shadow-lg font-bold ${
                     scrolled 
-                      ? 'bg-maroon-900 hover:bg-maroon-800 text-golden-400' 
-                      : 'bg-golden-500 hover:bg-golden-600 text-white'
+                      ? 'bg-black hover:bg-gray-800 text-white' 
+                      : 'bg-white hover:bg-gray-100 text-black'
                   }`}
                 >
                   ENQUIRE NOW
@@ -183,17 +183,17 @@ function App() {
             alt="The GoldenCity Township"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-maroon-900/95 via-maroon-900/90 to-maroon-800/75"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/90 to-gray-900/85"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-white">
-              <h1 className="text-5xl lg:text-7xl font-bold elegant-heading mb-6 text-golden-400">
+              <h1 className="text-5xl lg:text-7xl font-bold elegant-heading mb-6 text-white">
                 THE GOLDENCITY TOWNSHIP
               </h1>
-              <div className="h-1 w-32 bg-golden-600 mb-8"></div>
+              <div className="h-1 w-32 bg-white mb-8"></div>
               <p className="text-xl lg:text-2xl mb-4 text-gray-200">
                 Premium Residential & Commercial Plots
               </p>
@@ -201,10 +201,10 @@ function App() {
                 Near Jewar International Airport | Yamuna Expressway
               </p>
               
-              <div className="bg-black/40 backdrop-blur-sm border-l-4 border-golden-600 p-6 mb-8 inline-block">
+              <div className="bg-white/10 backdrop-blur-sm border-l-4 border-white p-6 mb-8 inline-block">
                 <p className="text-gray-300 text-sm mb-2 elegant-heading tracking-wider">STARTING AT</p>
                 <div className="flex items-baseline gap-3">
-                  <span className="text-3xl font-bold text-golden-400">- ₹38,500</span>
+                  <span className="text-3xl font-bold text-white">- ₹38,500</span>
                 </div>
                 <p className="text-xl text-gray-300 mt-1">/ sq.yd</p>
               </div>
@@ -212,13 +212,13 @@ function App() {
               <div className="flex flex-wrap gap-4">
                 <button 
                   onClick={handleWhatsAppClick}
-                  className="bg-golden-600 hover:bg-golden-700 text-white px-8 py-4 rounded elegant-heading tracking-wider transition shadow-lg"
+                  className="bg-white hover:bg-gray-100 text-black px-8 py-4 rounded elegant-heading tracking-wider transition shadow-lg font-bold"
                 >
                   BOOK YOUR PLOT
                 </button>
                 <a 
                   href="#contact"
-                  className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded elegant-heading tracking-wider transition border border-golden-600"
+                  className="bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white px-8 py-4 rounded elegant-heading tracking-wider transition border-2 border-white"
                 >
                   SCHEDULE VISIT
                 </a>
@@ -227,8 +227,8 @@ function App() {
 
             {/* Right Side - Contact Form */}
             <div className="bg-white/98 backdrop-blur-md p-8 shadow-2xl">
-              <h3 className="text-3xl font-bold text-maroon-900 mb-2 elegant-heading">Have a Question?</h3>
-              <p className="text-golden-600 font-semibold mb-6 elegant-heading tracking-wider">ENQUIRE NOW</p>
+              <h3 className="text-3xl font-bold text-black mb-2 elegant-heading">Have a Question?</h3>
+              <p className="text-gray-600 font-semibold mb-6 elegant-heading tracking-wider">ENQUIRE NOW</p>
               
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -275,7 +275,7 @@ function App() {
                 </div>
                 <button 
                   type="submit"
-                  className="w-full bg-maroon-900 hover:bg-maroon-800 text-golden-400 py-4 font-bold elegant-heading tracking-wider transition"
+                  className="w-full bg-black hover:bg-gray-800 text-white py-4 font-bold elegant-heading tracking-wider transition"
                 >
                   SEND INFORMATION
                 </button>
@@ -289,32 +289,32 @@ function App() {
       <section id="about" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-maroon-900 mb-4 elegant-heading">ABOUT THE GOLDENCITY TOWNSHIP</h2>
-            <div className="h-1 w-32 bg-golden-600 mx-auto mb-6"></div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4 elegant-heading">ABOUT THE GOLDENCITY TOWNSHIP</h2>
+            <div className="h-1 w-32 bg-black mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               A premium residential and commercial development strategically located near Jewar Airport
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-8 border-t-4 border-golden-600">
-              <FaMapMarkerAlt className="text-5xl mb-4 text-maroon-900" />
+            <div className="bg-gray-50 p-8 border-t-4 border-black hover:shadow-xl transition">
+              <FaMapMarkerAlt className="text-5xl mb-4 text-black" />
               <h3 className="text-2xl font-bold text-gray-800 mb-3 elegant-heading">Prime Location</h3>
               <p className="text-gray-600">
                 Strategically located near Jewar International Airport on Yamuna Expressway with excellent connectivity.
               </p>
             </div>
             
-            <div className="bg-gray-50 p-8 border-t-4 border-golden-600">
-              <div className="text-5xl mb-4 text-maroon-900">🏗️</div>
+            <div className="bg-gray-50 p-8 border-t-4 border-black hover:shadow-xl transition">
+              <div className="text-5xl mb-4 text-black">🏗️</div>
               <h3 className="text-2xl font-bold text-gray-800 mb-3 elegant-heading">Modern Infrastructure</h3>
               <p className="text-gray-600">
                 Wide roads, underground utilities, 24/7 security, and world-class amenities for premium living.
               </p>
             </div>
             
-            <div className="bg-gray-50 p-8 border-t-4 border-golden-600">
-              <div className="text-5xl mb-4 text-green-600">🌳</div>
+            <div className="bg-gray-50 p-8 border-t-4 border-black hover:shadow-xl transition">
+              <div className="text-5xl mb-4 text-gray-700">🌳</div>
               <h3 className="text-2xl font-bold text-gray-800 mb-3 elegant-heading">Green Living</h3>
               <p className="text-gray-600">
                 Landscaped gardens, parks, and open spaces for a healthy and sustainable lifestyle.
@@ -325,11 +325,11 @@ function App() {
       </section>
 
       {/* Plots Section */}
-      <section id="plots" className="py-20 bg-maroon-900">
+      <section id="plots" className="py-20 bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-golden-400 mb-4 elegant-heading">AVAILABLE PLOTS</h2>
-            <div className="h-1 w-32 bg-golden-600 mx-auto mb-6"></div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 elegant-heading">AVAILABLE PLOTS</h2>
+            <div className="h-1 w-32 bg-white mx-auto mb-6"></div>
             <p className="text-xl text-gray-300">Choose the perfect plot for your investment</p>
           </div>
           
@@ -520,8 +520,8 @@ function App() {
       <section id="contact" className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-maroon-900 mb-4 elegant-heading">CONTACT US</h2>
-            <div className="h-1 w-32 bg-golden-600 mx-auto mb-6"></div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4 elegant-heading">CONTACT US</h2>
+            <div className="h-1 w-32 bg-black mx-auto mb-6"></div>
             <p className="text-xl text-gray-600">Get in touch with our team</p>
           </div>
           
@@ -689,8 +689,115 @@ function App() {
         </div>
       </section>
 
+      {/* SEO Content Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, #7f1838 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-block px-6 py-2 bg-gray-100 text-black rounded-full text-sm font-bold mb-6">
+                PREMIUM REAL ESTATE INVESTMENT
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-black elegant-heading mb-4">
+                About The Goldencity Township | Goldencity Aligarh
+              </h2>
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <div className="h-1 w-20 bg-black rounded-full"></div>
+                <div className="text-black text-2xl">✦</div>
+                <div className="h-1 w-20 bg-black rounded-full"></div>
+              </div>
+              <p className="text-xl text-gray-600">The Goldencity (Thegoldencity) - Premium Plots in Noida | Yamuna Express Property | Jewerproperty Investment</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition border-t-4 border-black">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">🏘️</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-black elegant-heading">Your Gateway to Premium Living</h3>
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  <strong className="text-black">The Goldencity Township</strong> (also known as <strong className="text-black">Thegoldencity</strong>, <strong className="text-black">The Golden city</strong>, and <strong className="text-black">Golden City</strong>) is a premium residential and commercial real estate project in <strong className="text-gray-800">Goldencity Aligarh</strong> near <strong className="text-gray-800">Jewar Airport</strong> on the <strong className="text-gray-800">Yamuna Express</strong>. Perfect <strong className="text-gray-800">Jewerproperty</strong> investment with best <strong className="text-gray-800">Plots in Noida</strong>.
+                </p>
+                <div className="bg-gray-50 p-4 rounded-xl border-2 border-gray-200">
+                  <p className="text-gray-700 leading-relaxed">
+                    Our <strong className="text-black">Goldencity Phase 1</strong> and <strong className="text-black">Goldencity Phase 2</strong> at <strong className="text-black">The Goldencity Township</strong> feature premium <strong className="text-gray-800">Goldencity Plots</strong> starting from <span className="text-2xl font-bold text-black">₹38,500</span> per square yard. These <strong className="text-gray-800">ADA property</strong> plots on <strong className="text-gray-800">Yamuna Express property</strong> corridor offer the best investment opportunity.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition border-t-4 border-black">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">💎</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-black elegant-heading">Why Invest in Goldencity?</h3>
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  <strong className="text-black">Goldencity Jewar</strong> (also known as <strong className="text-black">The Goldencity Aligarh</strong>) offers unmatched connectivity via <strong className="text-gray-800">Yamuna Express property</strong> corridor, proximity to Film City, and strategic location in YEIDA region. Our <strong className="text-gray-800">gated township plots</strong> at <strong className="text-gray-800">The Goldencity Township</strong> are perfect for <strong className="text-gray-800">Jewerproperty</strong> investors seeking the best <strong className="text-gray-800">Plots in Noida</strong>.
+                </p>
+                <div className="space-y-2">
+                  {['24/7 Security', 'Wide Roads', 'Bank Loan Available', 'Immediate Possession', 'Vastu Compliant', 'Clear Title'].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-2 text-gray-700">
+                      <div className="w-2 h-2 bg-black rounded-full"></div>
+                      <span className="font-semibold">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-black via-gray-900 to-black text-white p-10 rounded-3xl shadow-2xl mb-12">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl md:text-4xl font-bold mb-4 elegant-heading">Book Your Goldencity Plot Today</h3>
+                <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+                  Experience the best of <strong>The Goldencity Township</strong> living. These premium <strong>Plots in Noida</strong> on <strong>Yamuna Express property</strong> corridor offer excellent <strong>Jewerproperty</strong> investment opportunities at <strong>Goldencity Aligarh</strong>.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center gap-4">
+                <button onClick={handleWhatsAppClick} className="bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-lg transform hover:scale-105 flex items-center gap-2">
+                  <FaWhatsapp className="text-xl" /> Contact Us
+                </button>
+                <a href="/Brochure/the%20golden%20city%20brochure.pdf" download className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-full font-bold transition shadow-lg transform hover:scale-105">
+                  Download Brochure
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-3xl shadow-xl overflow-hidden border-2 border-gray-200">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center shrink-0">
+                  <span className="text-xl">🔍</span>
+                </div>
+                <h4 className="text-xl font-bold text-black elegant-heading">Related Searches</h4>
+              </div>
+              <div className="relative overflow-hidden">
+                <div className="flex animate-scroll-left">
+                  {[
+                    'The Goldencity', 'Goldencity', 'Goldencity Township', 'Goldencity Aligarh', 'Jewerproperty',
+                    'Plots in Noida', 'Yamuna Express property', 'Goldencity Plots', 'ADA property',
+                    'The Goldencity Township', 'Golden City', 'The Golden city', 'Thegoldencity', 'The Goldencity Aligarh'
+                  ].concat([
+                    'The Goldencity', 'Goldencity', 'Goldencity Township', 'Goldencity Aligarh', 'Jewerproperty',
+                    'Plots in Noida', 'Yamuna Express property', 'Goldencity Plots', 'ADA property'
+                  ]).map((tag, i) => (
+                    <span key={i} className="px-4 py-2 bg-gray-100 text-black rounded-full text-sm font-semibold whitespace-nowrap mx-2 shrink-0">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="bg-maroon-900 text-white py-12 border-t-4 border-golden-600">
+      <footer className="bg-black text-white py-12 border-t-4 border-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-2">
@@ -754,7 +861,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="border-t border-golden-600/30 pt-6 text-center">
+          <div className="border-t border-gray-700 pt-6 text-center">
             <p className="text-gray-400 text-sm">© 2025 THE GOLDENCITY. ALL RIGHTS RESERVED.</p>
           </div>
         </div>
@@ -818,7 +925,7 @@ function App() {
                 />
                 <button 
                   type="submit"
-                  className="w-full bg-burgundy-900 hover:bg-burgundy-800 text-golden-400 py-4 font-bold elegant-heading tracking-wider transition"
+                  className="w-full bg-black hover:bg-gray-800 text-white py-4 font-bold elegant-heading tracking-wider transition"
                 >
                   GET DETAILS NOW
                 </button>
