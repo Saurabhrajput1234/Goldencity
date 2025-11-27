@@ -124,7 +124,7 @@ function App() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl">
-                  <div className="text-3xl font-bold">220+</div>
+                  <div className="text-3xl font-bold">60+</div>
                   <div className="text-sm text-gray-300">Acres Land</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl">
@@ -215,7 +215,7 @@ function App() {
           <div className="max-w-2xl mx-auto">
             <div className="bg-gradient-to-br from-maroon-800 to-maroon-900 text-white p-12 rounded-3xl shadow-2xl">
               <h3 className="text-4xl font-bold mb-4 elegant-heading">{activeTab === 'residential' ? 'Residential Plots' : 'Commercial Plots'}</h3>
-              <div className="text-5xl font-bold mb-2">{activeTab === 'residential' ? '₹34,000 - ₹36,000' : '₹36,000 - ₹38,500'}</div>
+              <div className="text-5xl font-bold mb-2">{activeTab === 'residential' ? '₹38,500' : '₹38,500'}</div>
               <p className="text-xl text-gray-200 mb-8">per sq.yd</p>
               
               <div className="space-y-3 mb-8">
@@ -315,7 +315,16 @@ function App() {
           </div>
 
           <div className="mt-16 rounded-3xl overflow-hidden shadow-2xl">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3523.7428066196094!2d77.77145828126977!3d27.971161914233505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39735119baf84dc1%3A0x10e0f678dcb28696!2sThe%20Golden%20City%20-%20HavenHub%20Infra!5e0!3m2!1sen!2sin!4v1763628755918!5m2!1sen!2sin" width="100%" height="400" style={{ border: 0 }} allowFullScreen loading="lazy" title="Map"></iframe>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3523.7428066196094!2d77.77145828126977!3d27.971161914233505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39735119baf84dc1%3A0x10e0f678dcb28696!2sThe%20Golden%20City%20-%20HavenHub%20Infra!5e0!3m2!1sen!2sin!4v1763628755918!5m2!1sen!2sin"
+                width="100%" 
+                height="450" 
+                style={{ border: 0 }}
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="GoldenCity Township Location"
+              ></iframe>
           </div>
         </div>
       </section>

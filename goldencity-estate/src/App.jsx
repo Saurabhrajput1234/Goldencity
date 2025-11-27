@@ -204,7 +204,6 @@ function App() {
               <div className="bg-black/40 backdrop-blur-sm border-l-4 border-golden-600 p-6 mb-8 inline-block">
                 <p className="text-gray-300 text-sm mb-2 elegant-heading tracking-wider">STARTING AT</p>
                 <div className="flex items-baseline gap-3">
-                  <span className="text-5xl font-bold text-golden-400">₹34,000</span>
                   <span className="text-3xl font-bold text-golden-400">- ₹38,500</span>
                 </div>
                 <p className="text-xl text-gray-300 mt-1">/ sq.yd</p>
@@ -336,7 +335,7 @@ function App() {
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
-              { type: 'Residential Plots', price: '₹34,000 - ₹36,000', unit: 'per sq.yd', description: 'Prime residential plots with all modern amenities' },
+              { type: 'Residential Plots', price: '₹38,500', unit: 'per sq.yd', description: 'Prime residential plots with all modern amenities' },
               { type: 'Commercial Plots', price: '₹36,000 - ₹38,500', unit: 'per sq.yd', description: 'Strategic commercial plots for business growth' }
             ].map((plot, index) => (
               <div key={index} className="bg-white shadow-xl hover:shadow-2xl transition">
@@ -800,7 +799,7 @@ function App() {
                   Get Exclusive Offers!
                 </h3>
                 <p className="text-gray-600">
-                  Premium plots near Jewar Airport starting at ₹34,000/sq.yd
+                  Premium plots near Jewar Airport starting at ₹38,500/sq.yd
                 </p>
               </div>
 

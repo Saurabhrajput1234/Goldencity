@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { FaPhone, FaWhatsapp, FaFacebookF, FaInstagram, FaYoutube, FaEnvelope, FaBars, FaTimes, FaArrowUp, FaHome, FaCar, FaUsers, FaFileContract, FaKey } from 'react-icons/fa'
+import { FaPhone, FaWhatsapp, FaFacebookF, FaInstagram, FaYoutube, FaEnvelope, FaBars, FaTimes, FaArrowUp, FaHome, FaCar, FaUsers, FaFileContract, FaKey, FaCalendar, FaClock } from 'react-icons/fa'
+import { blogPosts, blogCategories } from './blogData'
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -176,12 +177,12 @@ function App() {
         <div className="relative h-full flex items-center">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
-              <p className="text-orange-500 font-semibold mb-4 uppercase tracking-wider">GOLDENCITY PLOTS | GOLDENCITY JEWAR | PLOTS IN NOIDA</p>
+              <p className="text-orange-500 font-semibold mb-4 uppercase tracking-wider">PREMIUM TOWNSHIP NEAR JEWAR AIRPORT</p>
               <h1 className="elegant-heading text-5xl md:text-6xl font-bold text-white mb-6">
-                GoldenCity Plots - Premium Plots in Noida Near Jewar Airport
+                GoldenCity Township - Your Gateway to Premium Living
               </h1>
               <p className="text-gray-200 mb-8 text-lg leading-relaxed">
-                An exceptional residential and commercial land development situated adjacent to the forthcoming Noida International Airport (Jewar Airport) along Yamuna Expressway. Spanning 220+ acres of meticulously designed township territory with competitive rates beginning at ₹38,500 per sq. yd. Features ADA-certified plots offering transparent ownership, financing options, and instant handover.
+                An exceptional residential and commercial land development situated adjacent to the forthcoming Noida International Airport (Jewar Airport) along Yamuna Expressway. Spanning 60+ acres of meticulously designed township territory with competitive rates beginning at ₹38,500 per sq. yd. Features ADA-certified plots offering transparent ownership, financing options, and instant handover.
               </p>
               <button onClick={handleWhatsAppClick} className="bg-orange-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-orange-600 transition-all shadow-lg flex items-center gap-2">
                 Schedule Site Visit
@@ -207,7 +208,7 @@ function App() {
                 Explore GoldenCity Township Development
               </h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Explore through images our expansive 220+ acre masterplanned community adjacent to Jewar Airport, featuring broad thoroughfares, manicured gardens, contemporary amenities, and prime residential & commercial land parcels awaiting your investment decision.
+                Explore through images our expansive 60+ acre masterplanned community adjacent to Jewar Airport, featuring broad thoroughfares, manicured gardens, contemporary amenities, and prime residential & commercial land parcels awaiting your investment decision.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -371,7 +372,7 @@ function App() {
                 </div>
                 <div className="flex justify-between items-center py-4 border-b border-gray-200">
                   <span className="font-semibold text-gray-700">Total Area</span>
-                  <span className="text-gray-900 font-bold">220+ Acres</span>
+                  <span className="text-gray-900 font-bold">60+ Acres</span>
                 </div>
                 <div className="flex justify-between items-center py-4 border-b border-gray-200">
                   <span className="font-semibold text-gray-700">Approval</span>
@@ -510,7 +511,7 @@ function App() {
                 </p>
                 <div className="bg-orange-50 p-4 rounded-xl">
                   <p className="text-gray-700 leading-relaxed">
-                    Spanning over 220 acres, <strong className="text-orange-800">GoldenCity Phase 1</strong> and <strong className="text-orange-800">GoldenCity Phase 2</strong> showcase <strong className="text-orange-700">residential plots near Jewar Airport</strong> with competitive pricing beginning at <span className="text-2xl font-bold text-orange-800">₹38,500</span> per square yard. Additionally, <strong className="text-orange-700">commercial plots near Noida International Airport</strong> are ready for entrepreneurial ventures and business establishments.
+                    Spanning over 60 acres, <strong className="text-orange-800">GoldenCity Phase 1</strong> and <strong className="text-orange-800">GoldenCity Phase 2</strong> showcase <strong className="text-orange-700">residential plots near Jewar Airport</strong> with competitive pricing beginning at <span className="text-2xl font-bold text-orange-800">₹38,500</span> per square yard. Additionally, <strong className="text-orange-700">commercial plots near Noida International Airport</strong> are ready for entrepreneurial ventures and business establishments.
                   </p>
                 </div>
               </div>
@@ -578,24 +579,14 @@ function App() {
               <div className="relative overflow-hidden">
                 <div className="flex animate-scroll-left">
                   {[
-                    'GoldenCity', 'GoldenCity plots', 'GoldenCity Jewar', 'GoldenCity Aligarh', 'plots in Noida',
-                    'GoldenCity Township', 'The GoldenCity', 'GoldenCity Yamuna Expressway', 'GoldenCity Noida',
-                    'plots near Jewar Airport', 'residential plots Noida', 'commercial plots Noida',
-                    'GoldenCity plots Jewar', 'plots in Noida Jewar', 'GoldenCity real estate',
-                    'GoldenCity Phase 1', 'GoldenCity Phase 2', 'buy plots in Noida', 'GoldenCity investment',
-                    'plots Aligarh Jewar', 'Noida plots near airport', 'GoldenCity ADA approved',
-                    'GoldenCity gated township', 'affordable plots Noida', 'luxury plots Jewar',
-                    'GoldenCity booking', 'GoldenCity price', 'plots in Greater Noida', 'YEIDA plots',
-                    'Film City plots', 'Noida International Airport plots', 'GoldenCity brochure',
-                    'GoldenCity site visit', 'bank loan plots Noida', 'immediate possession plots',
-                    'Vastu compliant plots', 'clear title plots Noida', 'GoldenCity developers',
-                    'best plots in Noida', 'top township Noida', 'GoldenCity reviews', 'GoldenCity location',
-                    'plots near Yamuna Expressway', 'Jewar Airport investment', 'GoldenCity contact',
-                    'GoldenCity map', 'plots for sale Noida', 'residential land Noida', 'commercial land Jewar'
+                    'GoldenCity Township', 'Plots near Jewar Airport', 'Residential Plots Noida', 'Commercial Plots',
+                    'Yamuna Expressway', 'YEIDA Approved', 'ADA Approved Plots', 'Gated Township',
+                    'Bank Loan Available', 'Immediate Possession', 'Vastu Compliant', 'Clear Title',
+                    'Phase 1', 'Phase 2', 'Investment Opportunity', 'Premium Township',
+                    'Noida Real Estate', 'Film City Proximity', 'Airport Connectivity', 'Modern Infrastructure'
                   ].concat([
-                    'GoldenCity', 'GoldenCity plots', 'GoldenCity Jewar', 'GoldenCity Aligarh', 'plots in Noida',
-                    'GoldenCity Township', 'GoldenCity Noida', 'plots near Jewar Airport', 'GoldenCity investment',
-                    'buy plots in Noida', 'GoldenCity real estate', 'best plots in Noida'
+                    'GoldenCity Township', 'Plots near Jewar Airport', 'Residential Plots Noida', 'Commercial Plots',
+                    'Yamuna Expressway', 'YEIDA Approved', 'ADA Approved Plots', 'Gated Township'
                   ]).map((tag, i) => (
                     <span key={i} className="px-4 py-2 bg-orange-50 text-orange-800 rounded-full text-sm font-semibold whitespace-nowrap mx-2 shrink-0">
                       {tag}
@@ -630,7 +621,7 @@ function App() {
                   What is GoldenCity Plots?
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  <strong className="text-orange-800">GoldenCity Plots</strong> is a premium residential and commercial plotting project near <strong>Jewar Airport</strong> on <strong>Yamuna Expressway</strong>. Spanning over 220+ acres, <strong>GoldenCity Township</strong> offers ADA-approved plots with clear titles, starting from ₹38,500 per sq.yd. Located in the <strong>Aligarh-Jewar region</strong>, it's one of the best <strong>plots in Noida</strong> for investment and residential purposes.
+                  <strong className="text-orange-800">GoldenCity Plots</strong> is a premium residential and commercial plotting project near <strong>Jewar Airport</strong> on <strong>Yamuna Expressway</strong>. Spanning over 60+ acres, <strong>GoldenCity Township</strong> offers ADA-approved plots with clear titles, starting from ₹38,500 per sq.yd. Located in the <strong>Aligarh-Jewar region</strong>, it's one of the best <strong>plots in Noida</strong> for investment and residential purposes.
                 </p>
               </div>
 
@@ -758,6 +749,65 @@ function App() {
         </div>
       </section>
 
+      {/* Blog Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="inline-block px-6 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-bold mb-6">
+              LATEST INSIGHTS
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 elegant-heading mb-4">
+              GoldenCity Blog & News
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Stay updated with the latest real estate trends, investment tips, and GoldenCity Township news
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {blogPosts.slice(0, 3).map((post) => (
+              <article key={post.id} className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
+                <div className="relative h-64 overflow-hidden">
+                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold">
+                      {post.category}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                    <span className="flex items-center gap-1">
+                      <FaCalendar className="text-orange-500" />
+                      {new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <FaClock className="text-orange-500" />
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <button onClick={handleWhatsAppClick} className="text-orange-600 font-semibold hover:text-orange-700 transition flex items-center gap-2">
+                    Read More <span>→</span>
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <button onClick={handleWhatsAppClick} className="bg-orange-500 text-white px-10 py-4 rounded-full font-bold hover:bg-orange-600 transition shadow-lg transform hover:scale-105">
+              View All Articles
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="container mx-auto px-4">
@@ -771,7 +821,7 @@ function App() {
                 </div>
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Premium residential and commercial plots near Noida International Airport (Jewar Airport) on Yamuna Expressway. Over 220 acres of well-planned township with modern infrastructure and amenities.
+                Premium residential and commercial plots near Noida International Airport (Jewar Airport) on Yamuna Expressway. Over 60 acres of well-planned township with modern infrastructure and amenities.
               </p>
             </div>
             <div>
@@ -839,7 +889,7 @@ function App() {
             <div className="text-center text-gray-400 mb-4">
               <p className="mb-2">&copy; 2025 GoldenCity Township. All rights reserved.</p>
               <p className="text-sm">
-                <strong className="text-orange-500">GoldenCity Plots</strong> | <strong className="text-orange-500">GoldenCity Jewar</strong> | <strong className="text-orange-500">Plots in Noida</strong> | <strong className="text-orange-500">GoldenCity Aligarh</strong>
+                Premium Township Near Jewar Airport | Yamuna Expressway | Noida Real Estate
               </p>
             </div>
             <div className="text-center text-xs text-gray-500">
